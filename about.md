@@ -5,7 +5,7 @@ permalink: /about/
 ---
 
 I live in Munich, work as a working student in Logivations GmbH. Currenly I am pursuing a masters degree in computer science at Technical University of Munich.
-I am from Ankara, Turkey, born and bred. I have received my Bachelor's degree in computer science from Hacettepe Univercity.
+I am from Ankara, Turkey, born and bred. I have received my Bachelor's degree in computer science from Hacettepe University.
 
 ### More Information
 
@@ -16,4 +16,4 @@ In this blog I will try to share my experience with the difference kind of probl
 
 ### Contact me
 
-[email@domain.com](mailto:email@domain.com)
+[nehil.danis@tum.de](mailto:nehildanis@tum.de)
