@@ -63,7 +63,8 @@ We know point x from set 1, corresponds to point p from set 2. Below error funct
 average difference between set 1 and set 2 after the rotation R and translation t is applied.
 ```
 
-![Formula of rotation and translation](formula_1.png)
+![Formula of rotation and translation]({{ site.baseurl }}/_posts/2021-3-20-Iterative-Closest-Point/formula_1.png)
+
 
 
 ```text
