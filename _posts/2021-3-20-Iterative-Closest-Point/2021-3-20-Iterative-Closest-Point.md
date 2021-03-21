@@ -3,31 +3,30 @@ layout: post
 title: Iterative Closest Point Algorithm
 ---
 
-Hi there! You are probably interested in finding the correspondences between point clouds. Maybe you have data from two 
-different LiDARs and you would like to find the rotation and translation between the device's base coordinate systems. 
+Hi there! You are probably interested in finding the correspondences between two point clouds. Maybe you have data from two
+different LiDARs and you would like to find the rotation and translation between the devices' base coordinate systems.
 Or maybe, you are just like me, interested in finding the transformation between data taken from different media.
 
-Consider that you have two different point clouds, and iterative closest point algorithm aims to minimize the distance 
-between these point clouds, this way it finds the relative correspondences between point clouds.
+Given two different point clouds, and the iterative closest point algorithm aims to minimize the distance
+between them, while defining the correspondences. It is an iterative algorithm because, in the beginning, we don't know 
+the correspondences between the point sets. In this case, it is impossible to find the transformation between the point 
+sets in one step. We need something iterative.
 
-It is an iterative algorithm, because at the beginning, we don't know the correspondences between the point sets. In 
-this case it is impossible to find the transformation between the point sets in one step. We need something iterative.
-How?
-
-Basically we will have some function which represents the difference between the two point sets, and we will try to 
-minimize this function iteratively. This will lead to the rotation and translation which gives the minimum difference 
-between the point sets. Let's explain it with an example, shall we?
+We will have some function that represents the difference between the two point sets, and we will try to minimize this 
+function iteratively. This will lead to the rotation and translation which gives the minimum difference between the 
+point sets. Let me explain it with an example!
 
 ### Basic Example of ICP Algorithm
-Consider you have two point clouds. One property of these point clouds is that they are exactly the same, only one of them is
+Consider you have two point clouds. One property of these point clouds is that they are the same, only one of them is
 the rotated and translated version of the other one. This way it is easy to check the correctness of the result.
 
-Below image shows the source and target clouds, blue and red respectively:
+The below image shows the source and target clouds, blue and red respectively:
 
 ![The blue cloud represents the source and the red one is the target](https://github.com/NehilDanis/nehildanis.github.io/raw/master/_posts/2021-3-20-Iterative-Closest-Point/source_and_target_clouds.png)
 
 
-The red point cloud is 45 degrees rotated in the z-axis and 0.25 meters translated in x-axis version of the blue point cloud.
+The red point cloud is 45 degrees rotated in the z-axis and 0.25 meters translated along the x-axis version of the blue 
+point cloud. The piece of code belowe shows how to define such transformation matrix in C++.
 
 ```c++
 PointCloudT::Ptr transformed_cloud = std::make_unique<PointCloudT>();
@@ -53,14 +52,13 @@ transform (0,3) = 0.25;
 pcl::transformPointCloud (source_cloud, *transformed_cloud, transform);
 ```
 
-The task now is to match these two point clouds. If we knew the point correspondences, this problem would be solved in 
-closed form solution. 
+Now that we have two point clouds, the task is to match these two point clouds. If we knew the point correspondences, 
+this problem would be solved in closed-form solution as explained below.
 
 ```text
 Consider A represents our transformation matrix, 4x3. Not in the homogeneous format.
 A = (R t)
-We know point x from set 1, corresponds to point p from set 2. Below error function shows the 
-average difference between set 1 and set 2 after the rotation R and translation t is applied.
+We know point x from set 1, corresponds to point p from set 2. The below error function shows the average difference between set 1 and set 2 after the rotation R and translation t are applied.
 ```
 
 ![Formula of rotation and translation](https://github.com/NehilDanis/nehildanis.github.io/raw/master/_posts/2021-3-20-Iterative-Closest-Point/formula_1.png)
@@ -68,25 +66,22 @@ average difference between set 1 and set 2 after the rotation R and translation 
 
 
 ```text
-Here is the thing, if we know our matrix A is rank(3), we will be able to calculate rotation
-and translation by finding the singular value decomposition of transformation matrix A.
+Here is the thing, if we know our matrix A is rank(3), we will be able to calculate the rotation and translation by finding the singular value decomposition of transformation matrix A.
 ```
 
-However as I mentioned before, we don't know the correspondences between the sets, so we need to try different 
-correspondences, which will at some point in time lead to minimum sum of squares error. This is why we need an iterative
+However as I mentioned before, we don't know the correspondences between the sets, so we need to try different correspondences, which will at some point in time lead to the minimum sum of squares error. This is why we need an iterative
 approach.
 
 #### Steps of ICP algorithm
 1. Determine the point correspondences between the two sets.
-2. Computer rotation and translation via SVD.
+2. Compute rotation and translation via SVD.
 3. Apply this rotation and translation you found in the above step to the source cloud.
 4. Compute E(R, t) between the new cloud calculated in the above step and the target cloud.
 5. If the calculated error is larger than the threshold;
    * then repeat the steps above.
    * stop and output the alignment, otherwise.
-    
-Below you can see how I applied ICP algorithm. I have a parent class since I am planning to try different registration 
-methods as well, at some point. For ICP algorithm, I simply used the function from PointCloudLibrary(PCL).
+
+Below you can see how I applied the ICP algorithm. I simply used the function from PointCloudLibrary(PCL).
 ```text
 icp_algorithm.h
 ```
@@ -115,7 +110,7 @@ class ICPAlgorithm : public ShapeRegistration {
 
 ```text
 icp_algorithm.cpp
-only the the function which applies the registration
+only the function which handles the registration
 ```
 
 ```c++
@@ -124,7 +119,7 @@ PointCloudT ICPAlgorithm::apply_registration() {
     icp.setInputSource(std::make_shared<PointCloudT>(this->m_source_cloud));
     icp.setInputTarget(std::make_shared<PointCloudT>(this->m_target_cloud));
     
-    // Create a new point cloud which will represent the result point cloud after
+    // Create a new point cloud that will represent the result point cloud after
     // iteratively applying transformations to the input source cloud, to make it
     // look like the target point cloud.
     PointCloudT final_cloud;
@@ -134,16 +129,9 @@ PointCloudT ICPAlgorithm::apply_registration() {
 }
 ```
 
-Let's see some results!
+### Results
 
-```c++
-auto icp = std::make_unique<ICPAlgorithm>(source_cloud, target_cloud);
-auto final_cloud = icp->apply_registration();
-visualize_point_clouds(source_cloud, final_cloud, target_cloud);
-```
-
-We know that blue points show the source and red points show the target. Green set is the result of ICP registration 
-algorithm. Achieving the below result, the defult maximum number of iteration is used which is 10 in PCL library.
+We know that blue points show the source and red points show the target. The Green set is the result of the ICP registration algorithm. Achieving the below result, the default maximum number of iteration is used which is 10 in the PCL library.
 The difference between resulted cloud(green) and the target cloud(red) is 0.000238633.
 
 ![source is green, blue is final, red is the target](https://github.com/NehilDanis/nehildanis.github.io/raw/master/_posts/2021-3-20-Iterative-Closest-Point/result_10_iterations.png)
@@ -157,13 +145,12 @@ You can look at the ICP algorithm example in PCL from [here](https://pcl.readthe
 
 ### Cons of PCL
 So far PCL algorithm helped us to achieve the registration between two point sets after applying a rigid body transformation.
-However there are some cons of ICP algorithm:
+However, there are some cons of ICP algorithm:
 
 * Computationally expensive
 * Converges to local minima.
 * Doesn't work well with some specific transformations. Sadly not a good fit for non-homogeneous transformations.
 * Sensitive to outliers and noise.
-
 
 ### References
 * Besl, Paul J., and Neil D. McKay. "Method for registration of 3-D shapes." Sensor fusion IV: control paradigms and data structures. Vol. 1611. International Society for Optics and Photonics, 1992.
