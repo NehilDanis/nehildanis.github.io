@@ -24,7 +24,7 @@ the rotated and translated version of the other one. This way it is easy to chec
 
 Below image shows the source and target clouds, blue and red respectively:
 
-![The blue cloud represents the source and the red one is the target](source_and_target_clouds.png)
+![The blue cloud represents the source and the red one is the target](https://github.com/NehilDanis/nehildanis.github.io/raw/master/_posts/2021-3-20-Iterative-Closest-Point/source_and_target_clouds.png)
 
 
 The red point cloud is 45 degrees rotated in the z-axis and 0.25 meters translated in x-axis version of the blue point cloud.
@@ -63,7 +63,7 @@ We know point x from set 1, corresponds to point p from set 2. Below error funct
 average difference between set 1 and set 2 after the rotation R and translation t is applied.
 ```
 
-![Formula of rotation and translation]({{ site.baseurl }}/_posts/2021-3-20-Iterative-Closest-Point/formula_1.png)
+![Formula of rotation and translation](https://github.com/NehilDanis/nehildanis.github.io/raw/master/_posts/2021-3-20-Iterative-Closest-Point/formula_1.png)
 
 
 
@@ -146,11 +146,11 @@ We know that blue points show the source and red points show the target. Green s
 algorithm. Achieving the below result, the defult maximum number of iteration is used which is 10 in PCL library.
 The difference between resulted cloud(green) and the target cloud(red) is 0.000238633.
 
-![source is green, blue is final, red is the target](result_10_iterations.png)
+![source is green, blue is final, red is the target](https://github.com/NehilDanis/nehildanis.github.io/raw/master/_posts/2021-3-20-Iterative-Closest-Point/result_10_iterations.png)
 
-After increasing the maximum number of iterations parameter to 20, the below result can be achieved.
+After increasing the maximum number of iterations parameter to 20, the below result can be achieved. The difference between resulted cloud(green) and the target cloud(red) is 5.93282e-05.
 
-![source is green, blue is final, red is the target](result_20_iterations.png)
+![source is green, blue is final, red is the target](https://github.com/NehilDanis/nehildanis.github.io/raw/master/_posts/2021-3-20-Iterative-Closest-Point/result_20_iterations.png)
 
 You can look at the ICP algorithm example in PCL from [here](https://pcl.readthedocs.io/projects/tutorials/en/latest/interactive_icp.html).
 
