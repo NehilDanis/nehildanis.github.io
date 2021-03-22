@@ -143,9 +143,8 @@ After increasing the maximum number of iterations parameter to 20, the below res
 You can look at the ICP algorithm example in PCL from [here](https://pcl.readthedocs.io/projects/tutorials/en/latest/interactive_icp.html).
 
 
-### Cons of PCL
-So far PCL algorithm helped us to achieve the registration between two point sets after applying a rigid body transformation.
-However, there are some cons of ICP algorithm:
+### Cons of ICP
+So far ICP algorithm helped us to achieve the registration between two point sets.However, there are some cons of ICP algorithm:
 
 * Computationally expensive
 * Converges to local minima.
