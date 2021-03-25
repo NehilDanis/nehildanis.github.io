@@ -58,7 +58,19 @@ make (this step takes around 30 to 40 mins)
 sudo make install
 ```
 Cograts, you are set! Now all you need to do is changing the CMake file in your project. Friendly advice, take a close 
-look to the build folder you created. You can see many information such as the install destination etc.
+look to the build folder you created. You can see many information such as the install destination and the version information.
+
+After the compilation, in the build folder you will see a file named *ConfigVersion.cmake The first part of this file's name is your
+package name and if you look inside this package using the following command:
+
+```commandline
+vim *ConfigVersion.cmake
+```
+
+you will see that there is a variable called PACKAGE_VERSION, this parameter shows your packages version. While CMake tries to find
+this package it will check this file and see if the existing package is compatible with the version that you are looking for.
+
+So before you write your CMake check these information, to specify the package name and the version correctly :)
 
 ### Use PCL in your project
 
