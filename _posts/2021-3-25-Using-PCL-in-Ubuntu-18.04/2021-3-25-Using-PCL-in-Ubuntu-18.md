@@ -5,7 +5,7 @@ title: Using PCL Viewer in Ubuntu 18.04
 
 Few years ago Point Cloud Library(PCL) replaced the usage of boost shared pointers with standard pointers. From PCL 1.9 and on they started to support standard shared pointers. Great news! See the corresponding merge in PCL github repository [here](https://github.com/PointCloudLibrary/pcl/pull/3750).
 
-Recently, I used the PCL viewer in one of my projects. You can see the code I used below:
+Recently, I used the PCL viewer in one of my projects. You can see the code I used below:f
 
 
 
