@@ -3,7 +3,7 @@ layout: post
 title: Using PCL in Ubuntu 18.04 with C++14 Standards
 ---
 
-Last year, Point Cloud Library(PCL) replaced the usage of boost shared pointers with standard pointers. From PCL 1.9 and on they started to support standard shared pointers. Great news! See the corresponding merge in PCL github repository [here](https://github.com/PointCloudLibrary/pcl/pull/3750).
+Last year, Point Cloud Library(PCL) replaced the usage of boost shared pointers with standard pointers. From PCL 11.1 and on they started to support standard shared pointers. See [here](https://github.com/PointCloudLibrary/pcl/blob/master/CHANGES.md#-1110-11052020-) for the change log.
 
 Recently, I used the PCL viewer in one of my projects. You can see the code I used below:
 ```c++
@@ -25,24 +25,26 @@ while (!viewer->wasStopped ())
 }
 ```
 
-This was working just fine with the settings Ubuntu 18.04 and PCL 1.11. At some point during development I had to switch 
-to another workstation. The new workstation is also Ubuntu 18.04.
+This was working just fine on my computer, the settings are as the following; Ubuntu 18.04 and PCL 1.11.1. At some point
+during development I had to switch to another workstation which also has Ubuntu 18.04 operating system.
 
-During the compile process, CMake was able to find PCL so I thought; great, I don't need to install it. Then I get the 
+During the compile process, CMake was able to find PCL so I thought; great, I don't need to install it. Then I get 
 an error about the usage of standard shared pointers not being compatible.
 
-A quick search showed that one can get PCL using the following command in Ubuntu 18
+A quick search showed that one can get PCL using the following command in Ubuntu 18. Apparently the user before me, used
+this command and was able to get PCL ready easily.
 
 ```commandline
 sudo apt install libpcl-dev
 ```
 
-However, see [here](https://packages.ubuntu.com/bionic/libpcl-dev), the PCL version is 1.8. We already know that PCL only 
-supports standard shared pointers as I used in the above code, after version 1.9.
+However, see [here](https://packages.ubuntu.com/bionic/libpcl-dev), the PCL version is 1.8. We already know that PCL started
+supporting the usage of standard smart pointers only recently(PCL 11.1 and upper versions).
 
-The way around is to get the more recent release of PCL and during compilation specify which version of PCL needs to be used.
+The way around is to get the more recent release of PCL and during the compilation of your own project, specify which 
+version of PCL needs to be used.
 
-### Build PCL from Source
+### Build PCL from source
 
 * Go to PCL repository [releases](https://github.com/PointCloudLibrary/pcl/releases). Find the release you want to get 
 and change the tag name below accordingly. Download and unzip it, to anywhere you want in your system.
@@ -57,6 +59,8 @@ sudo make install
 ```
 Cograts, you are set! Now all you need to do is changing the CMake file in your project. Friendly advice, take a close 
 look to the build folder you created. You can see many information such as the install destination etc.
+
+### Use PCL in your project
 
 In your CMake file, after you defined the CMake version and give a name to you project, specify the C++ standard you want 
 to use in the project. After this step you can as find_package command to find PCL and please don't forget to specify the 
@@ -83,6 +87,7 @@ target_link_libraries (${PROJECT_NAME} ${PCL_LIBRARIES})
 ```
 
 Now, you can go and use your standard shared pointers in your code!
+
 Cheers!
 
 
