@@ -54,7 +54,7 @@ and change the tag name below accordingly. Download and unzip it, to anywhere yo
 mkdir build
 cd build
 cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr ..
-make (this step takes around 30 to 40 mins)
+make --j8 (takes around 15 mins)
 sudo make install
 ```
 Cograts, you are set! Now all you need to do is changing the CMake file in your project. Friendly advice, take a close 
