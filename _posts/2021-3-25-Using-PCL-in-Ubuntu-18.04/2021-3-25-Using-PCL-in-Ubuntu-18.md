@@ -50,6 +50,8 @@ version of PCL needs to be used.
 and change the tag name below accordingly. Download and unzip it, to anywhere you want in your system.
 * After that go into the directory that you extracted and do the following:
 
+Note: You can set the DCMAKE_BUILD_TYPE variable to Debug, if you want to be able to see the PCL source code during debugging.
+
 ```commandline
 mkdir build
 cd build
