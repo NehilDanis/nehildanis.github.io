@@ -3,7 +3,7 @@ layout: post
 title: The Importance of Launch Files and Their Basic Usage in ROS1
 ---
 
-Sometimes, especially while working on large tasks, you will require to run many ROS nodes at the same time. This can get tedious easily, since for each ROS node you need to start a new terminal tab. Also don't forget to run roscore, before starting all these nodes!
+Sometimes, especially while working on large tasks, you will require to run many ROS nodes at the same time. This can get tedious easily, since for each ROS node you need to start a new terminal tab. In addition to that; you also need to remember to run roscore.
 
 There must be another way! Well, this is basically where the importance of a launch file kicks in. 
 
@@ -25,7 +25,9 @@ ROS launch files are basically XML files which contains the information about th
     />
 </launch>
 ```
+
 To execute the launch file roslaunch command is used, roslaunch checks for roscore before running the nodes. If roscore is not running, then roslaunch starts roscore first. That is why, we don't need to execute roscore, before using roslaunch.
+
 ```commandline
 roslaunch package_name launch_file_name
 ```
@@ -57,7 +59,7 @@ This way if the particular node terminates, all the other nodes will also termin
 
 #### Output
 
-In case of using roslaunch, you won't be able to see the logs in your terminal but a log file:
+In case of using roslaunch, you won't be able to see the logs in your terminal but in a log file:
 
 _**~/.ros/log/run_id/node_name_number_stdout.log**_
 
@@ -68,28 +70,36 @@ output="screen"
 ```
 
 In case you want to visualise the results of all the nodes in the launch file on the terminal then you can execute the roslaunch command in the following way:
+
 ```commandline
 roslaunch --screen package_name launch_file_name
 ```
 
 #### Arguments in Launch Files
+
 To make the launch files configurable, launch arguments are supported by roslaunch.
 To declare an argument, use the arg element:
+
 ```xml
-<arg name="arg_name"/>
+<arg name="arg_name" deault="first_argument"/>
 ```
 
 There are multiple ways to assign a value to an argument:
 * You can simply provide a value to a particular argument in a roslaunch command line:
+
 ```commandline
 roslaunch package_name launch_file_name arg_name:=arg_value
 ```
+
 * Or as an alternative you can assign the value to an argument directly in the launch file:
+
 ```xml
 <arg name="arg_name" default="arg_value"/>
 ```
 
+
 or
+
 
 
 ```xml
@@ -98,6 +108,26 @@ or
 
 Both does the same job, the only difference is if you use _**value**_ element in the argument definition then you are not allowed to change the value of the argument anymore.
 In case of using _**default**_ element you can redefine the value of the argument later on as well.
+
+#### Accessing Another Launch File in Your Launch File
+
+This is a vital task, since in ROS projects usually more than one packages are used, sometimes we also need to start nodes from other packages.
+These nodes from other packages may also have some arguments, it would be really convenient to define those parameters whilestarting the node as well. To do so; you can use the _**include**_
+tag. Inside of the include tag; name the absolute path of the launch file, that we want to run, needs to be included. For example, recently I used Azure Kinect in one of my projects. 
+To be able to receive color cloud from the depth sensor, there were some parameters that need to be defined. Below you can see how this is done;
+
+```xml
+<include file="$(find azure_kinect_ros_driver)/launch/driver.launch">
+    <arg name="color_enabled" value="true"/>
+    <arg name="color_resolution" value="1080P"/>
+    <arg name="point_cloud" value="true"/>
+    <arg name="rgb_point_cloud" value="true"/>
+    <arg name="fps" value="5"/>
+</include>
+```
+
+#### Using Same Arguments in Different Nodes
+
 
 In some cases you may want to access the value of a particular argument in your launch file, such as:
 
