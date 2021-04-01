@@ -126,30 +126,53 @@ To be able to receive color cloud from the depth sensor, there were some paramet
 </include>
 ```
 
+#### Using Parameters in a Node
+
+A node may have parameters which is used while performing its functionality. In such cases, it is always better to define
+these parameters in the launch file rather than in your source code. It is better because:
+* Looks cleaner!
+* Time saver! If you want to change these parameters, if you chance them in your source code, you need to build your project again,
+which is time consuming. But if you define these parameters in your launch file, you don't need any extra build process.
+  
+A parameter includes name, type and value(or default) fields and can be defined as follows:
+
+```xml
+<param name="parameter_1" type="float" value="81.5"/>
+```
+
+This parameter will be place in between the node tags. 
+
+```xml
+<node pkg="registration_package" type="registration_executable" name="registration_node">
+    <param name="parameter_1" type="float" value="81.5"/>
+</node>
+```
+
+These parameters can be easily accessed from your source code. You need to use either get_param or param methods. They both 
+essentially do the same things. But is you use param method it will also initialize your parameter with a defined value,
+in case any value has already been defined for that parameter, in the launch file.
+
 #### Using Same Arguments in Different Nodes
 
-
-In some cases you may want to access the value of a particular argument in your launch file, such as:
+In some cases, nodes may be using the same argument but with different names. In such cases arguments need to be defined
+in between launch tags, but outside of any node tag. Let's consider node_1 and node_2 both using and argument which represents 
+the voxel_size. Also consider that, for node_1 is it better to call this parameter as source_cloud_downsample_size while 
+for node_2 downsample_size is a better fit. In such cases, instead of creating the same parameter two times we can apply the below solution.
 
 ```xml
 <launch>
-    <arg arg_name="parameter_1" default="12"/>
-    <arg arg_name="parameter_2" default="28"/>
+    <arg name="voxel_size" default="0.01"/>
     
-    <node
-        pkg="package_name"
-        type="executable_name"
-        name="node_name"
-        args="$(arg parameter_1)"
-    />
-    <node
-            pkg="package_name_1"
-            type="executable_name_1"
-            name="node_name_1"
-            args="$(arg parameter_2)"
-    />
+    <node pkg="registration_package" type="preprocessing_executable" name="preprocessing_node">
+        <param name="source_cloud_downsample_size" value="$(arg voxel_size)"/>
+    </node>
+    <node pkg="registration_package" type="registration_executable" name="registration_node">
+        <param name="downsample_size" value="$(arg voxel_size)"/>
+    </node>
 </launch>
 ```
+
+So the expressing in the value field of param tag means that the parameter will take the value of an argument called _**voxel_size**_.
 
 ### References
 * [A Gentle Introduction to ROS](https://cse.sc.edu/~jokane/agitr/agitr-small-launch.pdf)
