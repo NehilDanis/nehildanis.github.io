@@ -18,8 +18,32 @@ place of the point. If you consider a white wall, there are many points on it. H
 it is impossible to find the correspondences of these points on the wall in the target point cloud, because it is not distinctive.
 On the other hand, a corner can be a good feature point.
 
-There are many different ways to find good feature points, such as edge detectors. Today I will talk about finding the features 
-using histograms[1].
+### Summary of Persistent Point Feature Histograms for 3D Point Clouds[1]
+
+The two of the most used point features can be estimated surface curvatures and normals for a point. Each point is characterized 
+by using their k closest neighbors. Surface curvature and normal estimation of the points are highly sensitive to noise and 
+selection of the k neighbors. If data includes large noise, then selecting a small k will lead to large errors, if the k is too big 
+then the local details will get lost.
+
+There are algorithms which uses single and multi-scale features. In this paper authors used multi scale feature representations 
+of the points. Multi scale is better because even though the single scale feature descriptors can handle the noise in the 
+data, since they only have one scale, many points in the dataset will have similar feature vectors, which will reduce their 
+informative characteristics. This will make finding correspondences between source and target clouds hard.
+
+In this paper, histograms are used to represent each point in the point cloud. Points have different histogram for each of 
+the scale values. Usage of histogram is good because it can encode the neighborhood's geometrical properties while providing 
+an overall scale and pose invariant feature.
+
+#### The Steps
+
+Each scale value will represent different radius.
+
+* for each scale value;
+    * For each point p, select all the neighbors enclosed in the sphere with given radius.
+    * in case the normal of point p is missing, use all the neighbors to estimate it. PCA can be 
+    one way to estimate the normal.
+    * After all normals are obtained, use the viewpoint to re-orient all the points in the neigborhood consistently.
+    * For every pair of points in the neighborhood
 
 ### References
 [1] Rusu, Radu Bogdan, et al. "Persistent point feature histograms for 3D point clouds." Proc 10th Int Conf Intel 
