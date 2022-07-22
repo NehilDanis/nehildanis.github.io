@@ -1,6 +1,6 @@
 ---
-layout: post
+layout: book_post
 title: Book Review:/ Fermat's Enigma by Simon Singh
-permalink: /books/fermat-s-enigma/
+permalink: /books/
 ---
 Fermat's Enigma
