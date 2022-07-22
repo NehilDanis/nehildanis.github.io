@@ -1,6 +1,7 @@
 ---
 layout: post
 title: The Importance of Launch Files and Their Basic Usage in ROS1
+category: software
 ---
 
 Sometimes, especially while working on large tasks, you will require to run many ROS nodes at the same time. This can get tedious easily, since for each ROS node you need to start a new terminal tab. In addition to that; you also need to remember to run roscore.

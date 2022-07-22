@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Finding Persistent Features in a PointCloud using Histograms
+category: book
 ---
 
 Previously, I had published a blog post about ICP algorithm and its basic usage. Iterative closest point algorith is very 

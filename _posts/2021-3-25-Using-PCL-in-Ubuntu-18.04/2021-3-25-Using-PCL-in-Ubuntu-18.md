@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Using PCL in Ubuntu 18.04 with C++14 Standards
+category: book
 ---
 
 Last year, Point Cloud Library(PCL) replaced the usage of boost shared pointers with standard pointers. From PCL 11.1 and on they started to support standard shared pointers. See [here](https://github.com/PointCloudLibrary/pcl/blob/master/CHANGES.md#-1110-11052020-) for the change log.
