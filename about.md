@@ -4,16 +4,12 @@ title: About
 permalink: /about/
 ---
 
-Hi there! My name is Nehil. I live in Munich, work as a working student in Logivations GmbH. Currenly I am pursuing a masters degree in computer science at Technical University of Munich.
-I am from Ankara, Turkey, born and bred. I have received my Bachelor's degree in computer science from Hacettepe University.
+I live in Munich, work at [Brainlab](https://www.brainlab.com/) as Software Engineer. I am originally from Ankara,Turkey. I obtained my bachelor's degree in computer science from Hacettepe University. During my bachelors, I participated in Erasmus program in Germany. I was living in Freiburg im Breisgau, the heart of Black Forest, for half a year. I started my master's degree in computer science at Technical University of Munich in 2018, and completed it in 2021.
 
-### More Information
+My main research interest is computer vision, in particular multiview geometry and 3D reconstruction. I like to use deep learning as a tool while tackling different types of computer vision problems. I love ROS and the things you can do with it. Currently I am working as a C++ developer.
 
-My main research interest is computer vision, in particular multiview geometry and 3D reconstruction. I like to use deep learning as a tool while tackling different types of computer vision problems. 
-Recently, I have spent quite a bit of time learning ROS along with improving my knowledge in C++.
-In this blog I will try to share the problems that I faced while working on my thesis and during work.
- 
+This blog is mostly for me to keep track of what I have accomplished over the time. To share the problems I have faced while implementing new things, worth mentioning. 
 
 ### Contact me
 
-[nehil.danis@tum.de](mailto:nehildanis@tum.de)
+[Drop a line](mailto:nehilanis@gmail.com)
