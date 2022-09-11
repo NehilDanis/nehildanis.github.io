@@ -1,6 +1,6 @@
 ---
 layout: post
-title: [CMake] Target Foo requires the language dialect "CXX20" (with compiler extensions), but CMake does not know the compile flags to use to enable it
+title: Target Foo requires the language dialect "CXX20" (with compiler extensions), but CMake does not know the compile flags to use to enable it
 category: software
 ---
 
