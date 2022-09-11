@@ -26,12 +26,12 @@ As a ROS user, I know that it is never a good idea to meddle with your default C
 
 * Go to [here](https://cmake.org/download/) to get your desired version of CMake for your distribution. At this stage you have two options you can either get the shall script or build from sources and set the appropriate install prefix for your CMake install. I did the first option, after I downloded [version 3.23.3 bash script](https://github.com/Kitware/CMake/releases/download/v3.24.1/cmake-3.24.1-linux-x86_64.sh), I placed it in a directory where I generally put my third party libraries. 
 
-1. Run the script, it will create its own directory if you dont specify any other path, and will install the new CMake there.
+* Run the script, it will create its own directory if you dont specify any other path, and will install the new CMake there.
 ```console
 nehil@pavilion:~$ sudo bash /opt/cmake-3.*your_version*.sh
 ``` 
 
-2. At this stage if you run the following commands you will still get the information on your old CMake distibution. Because you haven't added you CMake install path to your environment variables.
+* At this stage if you run the following commands you will still get the information on your old CMake distibution. Because you haven't added you CMake install path to your environment variables.
 
 ```console
 nehil@pavilion:~$ which cmake # will give the install path to your current cmake
@@ -39,10 +39,12 @@ nehil@pavilion:~$ which cmake # will give the install path to your current cmake
 nehil@pavilion:~$ cmake --version # will give the default cmake version
 ```
 
-3. Add the new CMake install path to your environment variables.
+* Add the new CMake install path to your environment variables.
+
 ```console
 nehil@pavilion:~$ export PATH=$HOME/<yourCMakeInstallPath>/bin:$PATH
 
 nehil@pavilion:~$ export CMAKE_PREFIX_PATH=$HOME/<yourCMakeInstallPath>:$CMAKE_PREFIX_PATH
 ```
-4. Finally if you repeat the stage 2, you will be able to see the new cmake. However to be able to use this version all the time please update your environment variables in bashrc.
+
+* Finally if you repeat the stage 2, you will be able to see the new cmake. However to be able to use this version all the time please update your environment variables in bashrc.
