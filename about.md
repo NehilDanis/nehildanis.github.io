@@ -10,9 +10,9 @@ My main research interest is computer vision, in particular multiview geometry, 
 
 On my free time, I like doing outdoor sports, baking and reading.
 
-🏃‍♀️ We had this plan with some of my friedns, to hike up to Zugspitze. Hence I started running since 2023 February. I try to go once a week, as long as the weather is good. 
+🏃‍♀️ We have this plan with some of my friends, to hike up to Zugspitze. To improve my condition, I started running on February 2023. Now, I try to go once a week, as long as the weather is good. 
 
-🚴 I always love cycling. Recently, I have decided upgrade to a road bike, to try if I would like it. So far, I enjoy it very much, I try to record my tours in [Strava](https://www.strava.com/athletes/61483302), you can check it out.
+🚴 I always love cycling. Recently, I have decided to upgrade to a road bike, to try if I would like it. So far, I enjoy it very much, I try to record my tours on [Strava](https://www.strava.com/athletes/61483302), you can check it out.
 
 🎂 My baking journey started few years back. It is actually pretty amazing to see, the science behind baking and learn about how to achieve the best pastry cream, or the best texture for your dessert. I share my cakes on a seperate instagram account, you can check it [here](https://www.instagram.com/nehilbakes/).
 
