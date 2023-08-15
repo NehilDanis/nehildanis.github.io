@@ -6,7 +6,15 @@ permalink: /about/
 
 I live in Munich, work at [Brainlab](https://www.brainlab.com/) as Software Engineer. I am originally from Ankara,Turkey. I obtained my bachelor's degree in computer science from Hacettepe University. During my bachelors, I participated in Erasmus program in Germany. I was living in Freiburg im Breisgau, the heart of Black Forest, for half a year. I started my master's degree in computer science at Technical University of Munich in 2018, and completed it in 2021.
 
-My main research interest is computer vision, in particular multiview geometry, SLAM, and sensor fusion. I like to use deep learning as a tool while tackling different types of computer vision problems. I love ROS and the things you can do with it. Currently I am working as a C++ developer. On my spare time I am learning Rust and working on some robotics side projects, while reading about how to write better C++ code and also tests.
+My main research interest is computer vision, in particular multiview geometry, SLAM, and sensor fusion. I like to use deep learning as a tool while tackling different types of computer vision problems. I love ROS and the things you can do with it. Currently I am working as a C++ developer. Nowadays, I am learning Rust and working on some robotics side projects, while reading about how to write better C++ code and also tests.
+
+On my free time, I like doing outdoor sports, baking and reading.
+
+🏃‍♀️ We had this plan with some of my friedns, to hike up to Zugspitze. Hence I started running since 2023 February. I try to go once a week, as long as the weather is good. 
+
+🚴 I always love cycling. Recently, I have decided upgrade to a road bike, to try if I would like it. So far, I enjoy it very much, I try to record my tours in [Strava](https://www.strava.com/athletes/61483302), you can check it out.
+
+🎂 My baking journey started few years back. It is actually pretty amazing to see, the science behind baking and learn about how to achieve the best pastry cream, or the best texture for your dessert. I share my cakes on a seperate instagram account, you can check it [here](https://www.instagram.com/nehilbakes/).
 
 This blog is mostly for me to keep track of what I have accomplished over the time. To share the problems I have faced while implementing new things, worth mentioning. 
 
