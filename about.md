@@ -23,10 +23,10 @@ This blog is mostly for me to keep track of what I have accomplished over the ti
                 <b>Nehil Danis</b>, 
                 <a href="https://scholar.google.com/citations?user=X41OzcYAAAAJ&hl=en&oi=sra">Zhongliang Jiang</a>, 
                 <a href="https://scholar.google.com/citations?user=pbiNrskAAAAJ&hl=en&oi=sra">Yuan Bi</a>, 
-                <a href="https://scholar.google.com/citations?user=DdMIRNUAAAAJ&hl=en&oi=sra">Mingchuan Zhou</a>
-                <a href="https://ieeexplore.ieee.org/author/37089524775">Markus Kroenke</a> 
-                <a href="https://scholar.google.com/citations?user=oWz_8N8AAAAJ&hl=en">Thomas Wendler</a> 
-                <a href="https://scholar.google.com/citations?user=kzoVUPYAAAAJ&hl=en">Nassir Navab</a> 
+                <a href="https://scholar.google.com/citations?user=DdMIRNUAAAAJ&hl=en&oi=sra">Mingchuan Zhou</a>,
+                <a href="https://ieeexplore.ieee.org/author/37089524775">Markus Kroenke</a>,
+                <a href="https://scholar.google.com/citations?user=oWz_8N8AAAAJ&hl=en">Thomas Wendler</a>,
+                <a href="https://scholar.google.com/citations?user=kzoVUPYAAAAJ&hl=en">Nassir Navab</a>
                 <br>
                 <em>IEEE TIM</em>, 2022
                 <br>
