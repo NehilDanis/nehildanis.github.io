@@ -4,9 +4,11 @@ title: About
 permalink: /about/
 ---
 
-I live in Munich, work at [Brainlab](https://www.brainlab.com/) as Software Engineer. I am originally from Ankara, Turkey. I obtained my bachelor's degree in computer science from Hacettepe University. During my bachelors, I participated in Erasmus program in Germany. I was living in Freiburg im Breisgau, the heart of Black Forest, for half a year. I started my master's degree in computer science at Technical University of Munich in 2018, and completed it in 2021.
+I live in Munich, work at [Agile Robots SE](https://www.agile-robots.com/en/) as Computer Vision Engineer. Currently I work on 6D pose estimation algorithms for robotic applications. Along side that, I have also developped multiple camera drivers and implemented the calibration pipelines. I started as a more classical vision engineer, however with the evolving field, I had no choice but also jump into foundation models. My day to day life at work I use C++, due to its speed, but of course like everyone else, for prototyping my go to language is Python.
 
-My main research interest is computer vision, in particular multiview geometry, SLAM, and sensor fusion. I like to use deep learning as a tool while tackling different types of computer vision problems. I love ROS and the things you can do with it. Currently I am working as a C++ developer. Nowadays, I am learning Rust and working on some robotics side projects, while reading about how to write better C++ code and also tests.
+I am originally from Ankara, Turkey. I obtained my bachelor's degree in computer science from Hacettepe University. During my bachelors, I participated in Erasmus program in Germany. I was living in Freiburg im Breisgau, the heart of Black Forest, for half a year. I started my master's degree in computer science at Technical University of Munich in 2018, and completed it in 2021. After that, for 2 years I worked at Brainlab, and develop ultrasound solutions, help people with brain tumors.
+
+Currently, my main research interest is 6D pose estimation. Also since I work at a robotics company, I have gained quite some first hand experiences, especially with robot arms. Currently, I am taking part in robot kinematics courses, to understand more, how the path planning works under the hood.
 
 On my free time, I like doing outdoor sports, baking and reading.
 
@@ -16,7 +18,7 @@ On my free time, I like doing outdoor sports, baking and reading.
 
 🎂 My baking journey started few years back. It is actually pretty amazing to see, the science behind baking and learn about how to achieve the best pastry cream, or the best texture for your dessert. I share my cakes on a seperate instagram account, you can check it [here](https://www.instagram.com/nehilbakes/).
 
-This blog is mostly for me to keep track of what I have accomplished over the time. To share the problems I have faced while implementing new things, worth mentioning. 
+This blog is mostly for me to keep track of what I have accomplished over the time. To share the problems, that I have faced while implementing new things. 
 
 ## Publications
 
