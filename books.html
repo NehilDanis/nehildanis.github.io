@@ -1,20 +1,40 @@
 ---
-layout: default-books
+layout: default
+title: Books
+permalink: /books/
+tab: books
 ---
 
-<div class="posts">
-  {% for post in site.posts %}
-    {% if post.category == "book" %}
-      <article class="post">
+<article class="page">
+  <h1>Books</h1>
 
-        <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
+  <div class="entry">
+    <p class="page-intro">Notes and reviews on the books I read, fiction and non-fiction alike.</p>
+  </div>
 
-        <div class="entry">
-          {{ post.excerpt }}
+  {% assign books = site.posts | where: "category", "book" %}
+
+  <div class="entry-list">
+    {% for book in books %}
+      <article class="entry-item">
+        <span class="date">{{ book.date | date: "%B %e, %Y" }}</span>
+
+        <h2 class="entry-item-title">
+          <a href="{{ site.baseurl }}{{ book.url }}">{{ book.title }}</a>
+        </h2>
+
+        {% if book.author %}
+          <p class="entry-item-meta">by {{ book.author }}</p>
+        {% endif %}
+
+        <div class="entry-item-body">
+          {{ book.excerpt | strip_html | truncate: 240 }}
         </div>
 
-        <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
+        <a href="{{ site.baseurl }}{{ book.url }}" class="read-more">Read More</a>
       </article>
-    {% endif %}
-  {% endfor %}
-</div>
+    {% else %}
+      <p class="empty">No book notes yet — add a post with <code>category: book</code>.</p>
+    {% endfor %}
+  </div>
+</article>

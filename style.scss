@@ -237,6 +237,22 @@ nav {
   }
 }
 
+.nav-link {
+  display: inline-block;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+
+  &:hover {
+    color: $blue;
+  }
+
+  &.is-active {
+    color: $darkerGray;
+    font-weight: bold;
+    border-bottom-color: $blue;
+  }
+}
+
 //
 // .main
 //
@@ -269,6 +285,123 @@ nav {
     text-transform: uppercase;
     font-size: 15px;
   }
+}
+
+//
+// Section headings shared by the tab pages
+//
+
+.section-title {
+  margin: 0 0 20px;
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: $gray;
+}
+
+.page-intro {
+  color: $gray;
+}
+
+.empty {
+  color: $gray;
+  font-style: italic;
+}
+
+//
+// Featured cards on the home page
+//
+
+.featured {
+  margin-bottom: 50px;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 20px;
+
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  display: block;
+  padding: 20px;
+  border: 1px solid $lightGray;
+  border-radius: 6px;
+  color: $darkGray;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+
+  &:hover {
+    border-color: $blue;
+    transform: translateY(-2px);
+  }
+}
+
+.card-date {
+  display: block;
+  font-size: 13px;
+  font-style: italic;
+  color: $gray;
+}
+
+.card-title {
+  margin: 8px 0 10px;
+  font-size: 19px;
+  line-height: 1.3;
+}
+
+.card-excerpt {
+  margin: 0;
+  font-size: 15px;
+  color: $gray;
+}
+
+//
+// List of books / papers
+//
+
+.entry-item {
+  padding-bottom: 2em;
+  margin-bottom: 2em;
+  border-bottom: 1px solid $lightGray;
+
+  &:last-child {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    border-bottom: none;
+  }
+}
+
+.entry-item-title {
+  margin: 6px 0 5px;
+
+  a {
+    color: $darkerGray;
+
+    &:hover {
+      color: $blue;
+    }
+  }
+}
+
+.entry-item-meta {
+  margin: 0;
+  color: $gray;
+  font-size: 15px;
+}
+
+.entry-item-body {
+  margin: 12px 0;
+}
+
+.read-more {
+  text-transform: uppercase;
+  font-size: 15px;
+  margin-right: 15px;
 }
 
 .wrapper-footer {

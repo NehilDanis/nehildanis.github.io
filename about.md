@@ -2,6 +2,7 @@
 layout: page
 title: About
 permalink: /about/
+tab: about
 ---
 
 I live in Munich, work at [Agile Robots SE](https://www.agile-robots.com/en/) as Computer Vision Engineer. Currently I work on 6D pose estimation algorithms for robotic applications. Along side that, I have also developped multiple camera drivers and implemented the calibration pipelines. I started as a more classical vision engineer, however with the evolving field, I had no choice but also jump into foundation models. My day to day life at work I use C++, due to its speed, but of course like everyone else, for prototyping my go to language is Python.

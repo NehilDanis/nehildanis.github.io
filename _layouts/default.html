@@ -26,12 +26,7 @@
             <p class="site-description">{{ site.description }}</p>
           </div>
 
-          <nav>
-            <a href="{{ site.baseurl }}/">Home</a>
-            <!--<a href="{{ site.baseurl }}/books">Books</a>-->
-            <a href="{{ site.baseurl }}/papers">Papers</a>
-            <a href="{{ site.baseurl }}/about">About</a>
-          </nav>
+          {% include nav.html %}
         </header>
       </div>
     </div>

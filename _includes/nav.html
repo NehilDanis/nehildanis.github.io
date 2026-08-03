@@ -1,0 +1,17 @@
+{% assign active_tab = page.tab %}
+{% unless active_tab %}
+  {% if page.collection == 'papers' %}
+    {% assign active_tab = 'papers' %}
+  {% elsif page.category == 'book' %}
+    {% assign active_tab = 'books' %}
+  {% elsif page.layout == 'post' %}
+    {% assign active_tab = 'posts' %}
+  {% endif %}
+{% endunless %}
+
+<nav class="site-nav">
+  <a href="{{ site.baseurl }}/" class="nav-link{% if active_tab == 'posts' %} is-active{% endif %}">Posts</a>
+  <a href="{{ site.baseurl }}/books/" class="nav-link{% if active_tab == 'books' %} is-active{% endif %}">Books</a>
+  <a href="{{ site.baseurl }}/papers/" class="nav-link{% if active_tab == 'papers' %} is-active{% endif %}">Papers</a>
+  <a href="{{ site.baseurl }}/about/" class="nav-link{% if active_tab == 'about' %} is-active{% endif %}">About</a>
+</nav>

@@ -1,0 +1,44 @@
+---
+layout: default
+title: Papers
+permalink: /papers/
+tab: papers
+---
+
+<article class="page">
+  <h1>Papers</h1>
+
+  <div class="entry">
+    <p class="page-intro">Summaries and notes for the papers I read. I update this list as I go.</p>
+  </div>
+
+  {% assign papers = site.papers | sort: "date" | reverse %}
+
+  <div class="entry-list">
+    {% for paper in papers %}
+      <article class="entry-item">
+        <span class="date">{{ paper.date | date: "%B %e, %Y" }}</span>
+
+        <h2 class="entry-item-title">
+          <a href="{{ site.baseurl }}{{ paper.url }}">{{ paper.title }}</a>
+        </h2>
+
+        {% if paper.authors %}
+          <p class="entry-item-meta">{{ paper.authors }}</p>
+        {% endif %}
+
+        <div class="entry-item-body">
+          {{ paper.excerpt | strip_html | truncate: 240 }}
+        </div>
+
+        {% if paper.link %}
+          <a href="{{ paper.link }}" class="read-more">Original Paper</a>
+        {% endif %}
+
+        <a href="{{ site.baseurl }}{{ paper.url }}" class="read-more">Read Notes</a>
+      </article>
+    {% else %}
+      <p class="empty">No papers yet — add a markdown file to the <code>_papers</code> folder.</p>
+    {% endfor %}
+  </div>
+</article>

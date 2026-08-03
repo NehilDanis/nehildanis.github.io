@@ -2,6 +2,7 @@
 layout: post
 title: Iterative Closest Point Algorithm
 category: software
+featured: true
 ---
 
 Hi there! You are probably interested in finding the correspondences between two point clouds. Maybe you have data from two

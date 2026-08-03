@@ -1,8 +1,9 @@
 ---
 layout: paper
-title: Example Paper: Vision System for Robotic Ultrasound
+title: "Example Paper: Vision System for Robotic Ultrasound"
 authors: Nehil Danis
 date: 2026-02-16
+link: https://arxiv.org/abs/2208.05383
 ---
 
 **Summary:**
