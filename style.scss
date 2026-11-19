@@ -281,6 +281,22 @@ nav {
     margin-top: 10px;
   }
 
+  table {
+    margin: 1.2em 0;
+    border-collapse: collapse;
+  }
+
+  th, td {
+    padding: 6px 18px;
+    border: 1px solid $lightGray;
+    text-align: left;
+  }
+
+  th {
+    background: $lightGray;
+    font-weight: bold;
+  }
+
   .read-more {
     text-transform: uppercase;
     font-size: 15px;
